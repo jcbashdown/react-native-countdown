@@ -42,7 +42,7 @@ var CountDown = React.createClass({
       component =
           <TouchableHighlight
               style={[styles.wrapper,this.props.buttonStyle]}
-              onPress={this._onPress.bind(this)}
+              onPress={this._onPress}
               >
             <Text style={[style,this.props.textStyle]}>{this.props.text}({this.state.time})</Text>
           </TouchableHighlight>
@@ -74,7 +74,7 @@ var CountDown = React.createClass({
         this.setState({time: this.props.time ? this.props.time : 60});
       }
     };
-    this.setTimeout(timer.bind(this), 1000);
+    this.setTimeout(timer, 1000);
   }
 });
 
